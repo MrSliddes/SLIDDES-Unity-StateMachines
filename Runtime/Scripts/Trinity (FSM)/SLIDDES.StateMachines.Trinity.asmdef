@@ -1,0 +1,14 @@
+{
+    "name": "SLIDDES.StateMachines.Trinity",
+    "rootNamespace": "SLIDDES.StateMachines.Trinity",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

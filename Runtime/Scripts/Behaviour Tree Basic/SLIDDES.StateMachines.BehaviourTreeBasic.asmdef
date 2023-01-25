@@ -1,0 +1,14 @@
+{
+    "name": "SLIDDES.StateMachines.BehaviourTreeBasic",
+    "rootNamespace": "SLIDDES.StateMachines.BehaviourTreeBasic",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

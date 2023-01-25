@@ -1,0 +1,19 @@
+{
+  "name": "com.sliddes.statemachines",
+  "version": "1.0.0",
+  "displayName": "SLIDDES State Machines",
+  "description": "Collection of SLIDDES state machines",
+  "keywords": [
+    "sliddes",
+    "mrsliddes",
+    "state",
+    "machines"
+  ],
+  "author": {
+    "name": "SLIDDES",
+    "email": "info@sliddes.com",
+    "url": "https://www.sliddes.com"
+  },
+  "type": "tool",
+  "unity": "2020.3"
+}
