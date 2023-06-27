@@ -1,0 +1,16 @@
+{
+    "name": "SLIDDES.StateMachines.Samples",
+    "rootNamespace": "SLIDDES.StateMachines.Samples",
+    "references": [
+        "GUID:9f55c470f1ae1b04fa659f4178b57325"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

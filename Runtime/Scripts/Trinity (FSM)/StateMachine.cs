@@ -22,7 +22,12 @@ namespace SLIDDES.StateMachines.Trinity
         /// The maximum amount of times the state machine can change a state per frame (prevents memory leaks)
         /// </summary>
         public int maxStateChangesPerFrame = 99;
+        /// <summary>
+        /// The states of the statemachine
+        /// </summary>
+        public Dictionary<string, State> states = new Dictionary<string, State>();
 
+        private readonly string debugPrefix = "[StateMachine]";
         /// <summary>
         /// Counter that keeps track of the amount of states changed this frame
         /// </summary>
@@ -58,6 +63,21 @@ namespace SLIDDES.StateMachines.Trinity
             {
                 if(currentState.allowsExit) NewState(nextState);
             }
+        }
+
+        /// <summary>
+        /// Transition to a new state
+        /// </summary>
+        /// <param name="stateName"></param>
+        /// <param name="overrideAllowExit"></param>
+        public void NewState(string stateName, bool overrideAllowExit = false)
+        {
+            if(!states.ContainsKey(stateName))
+            {
+                Debug.LogError($"{debugPrefix} Tried entering new state but '{stateName}' cannot be found. (Did you forget to add it to the statemachine?)");
+                return;
+            }
+            NewState(states[stateName], overrideAllowExit);
         }
 
         /// <summary>
