@@ -59,16 +59,17 @@ namespace SLIDDES.StateMachines.Trinity
             State initializedCurrentState = null;
             for(int i = 0; i < values.stateDatas.Count; i++)
             {
+                StateData stateData = values.stateDatas[i];
                 // Get the type of a state through its stateName
-                string stateName = values.stateDatas[i].stateName;
-                if(string.IsNullOrEmpty(stateName)) continue;
+                string stateScriptFullName = stateData.stateScriptFullName;
+                if(string.IsNullOrEmpty(stateScriptFullName)) continue;
 
-                if(values.showDebug) Debug.Log($"{debugPrefix} Get type for {stateName}");
+                if(values.showDebug) Debug.Log($"{debugPrefix} Get type for {stateScriptFullName}");
 
-                Type type = TypeExtentions.GetType(stateName);
+                Type type = TypeExtentions.GetType(stateScriptFullName);
                 if(type == null)
                 {
-                    if(values.showDebug) Debug.Log($"{debugPrefix} No type found for {stateName}");
+                    if(values.showDebug) Debug.Log($"{debugPrefix} No type found for {stateScriptFullName}");
                     continue;
                 }
 
@@ -78,11 +79,11 @@ namespace SLIDDES.StateMachines.Trinity
                 {
                     // Add state
                     if(values.showDebug) Debug.Log($"{debugPrefix} Add state {state}");
-                    states.Add(stateName, state);
+                    states.Add(stateData.stateName, state);
                     // Link state callbacks
-                    state.onEnter += values.stateDatas[i].onEnter.Invoke;
-                    state.onUpdate += values.stateDatas[i].onUpdate.Invoke;
-                    state.onExit += values.stateDatas[i].onExit.Invoke;
+                    state.onEnter += stateData.onEnter.Invoke;
+                    state.onUpdate += stateData.onUpdate.Invoke;
+                    state.onExit += stateData.onExit.Invoke;
                     // Initialize
                     state.Initialize(this);
 

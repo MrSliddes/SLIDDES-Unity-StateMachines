@@ -11,8 +11,11 @@ namespace SLIDDES.StateMachines.Trinity
     [System.Serializable]
     public class StateData
     {
-        [MonoScript]
+        [Tooltip("The name of the state")]
         public string stateName;
+        [MonoScript]
+        [Tooltip("A reference to the state script.cs Type.fullname")]
+        public string stateScriptFullName;
 
         public UnityEvent onEnter;
         public UnityEvent onUpdate;
