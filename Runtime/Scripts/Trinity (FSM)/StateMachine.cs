@@ -9,6 +9,7 @@ namespace SLIDDES.StateMachines.Trinity
     /// <summary>
     /// A basic state machine with an enter(), update(), exit()
     /// </summary>
+    [AddComponentMenu("SLIDDES/StateMachines/Trinity/StateMachine")]
     public class StateMachine : MonoBehaviour
     {
         /// <summary>
