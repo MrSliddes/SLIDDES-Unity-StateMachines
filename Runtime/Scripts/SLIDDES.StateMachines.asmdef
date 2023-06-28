@@ -1,9 +1,7 @@
 {
-    "name": "SLIDDES.StateMachines.Samples",
-    "rootNamespace": "SLIDDES.StateMachines.Samples",
-    "references": [
-        "GUID:9f55c470f1ae1b04fa659f4178b57325"
-    ],
+    "name": "SLIDDES.StateMachines",
+    "rootNamespace": "SLIDDES.StateMachines",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

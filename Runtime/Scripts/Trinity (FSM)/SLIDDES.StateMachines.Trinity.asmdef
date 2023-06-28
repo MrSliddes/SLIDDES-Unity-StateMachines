@@ -1,7 +1,9 @@
 {
     "name": "SLIDDES.StateMachines.Trinity",
     "rootNamespace": "SLIDDES.StateMachines.Trinity",
-    "references": [],
+    "references": [
+        "GUID:3137bea305e122e4caee512daecd223f"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace SLIDDES.StateMachines.Trinity
@@ -38,15 +39,14 @@ namespace SLIDDES.StateMachines.Trinity
         protected StateMachine baseStateMachine;
 
         /// <summary>
-        /// Constructor
+        /// Initialize the state
         /// </summary>
         /// <param name="baseStateMachine"></param>
-        public State(StateMachine baseStateMachine)
+        public virtual void Initialize(StateMachine baseStateMachine)
         {
             this.baseStateMachine = baseStateMachine;
             name = GetType().ToString();
         }
-
 
         /// <summary>
         /// When the state gets enterd
@@ -54,7 +54,7 @@ namespace SLIDDES.StateMachines.Trinity
         /// <remarks>Do not call this within the state!</remarks>
         public virtual void OnEnter()
         {
-            onEnter.Invoke();
+            onEnter?.Invoke();
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace SLIDDES.StateMachines.Trinity
         /// <remarks>Do not call this within the state!</remarks>
         public virtual void OnUpdate()
         {
-            onUpdate.Invoke();
+            onUpdate?.Invoke();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace SLIDDES.StateMachines.Trinity
         /// <remarks>Do not call this within the state!</remarks>
         public virtual void OnExit()
         {
-            onExit.Invoke();
+            onExit?.Invoke();
         }
     }
 }
