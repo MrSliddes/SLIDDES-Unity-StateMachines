@@ -13,6 +13,11 @@ namespace SLIDDES.StateMachines.Trinity
     public class StateMachine : MonoBehaviour
     {
         /// <summary>
+        /// Is the statemachine initialized?
+        /// </summary>
+        public bool Initialized { get; private set; }
+
+        /// <summary>
         /// The current active state of the state machine
         /// </summary>
         public State CurrentState => currentState;
@@ -23,7 +28,7 @@ namespace SLIDDES.StateMachines.Trinity
 
         public Values values;
         public Components components;
-                
+
         /// <summary>
         /// The states of the statemachine
         /// </summary>
@@ -94,13 +99,15 @@ namespace SLIDDES.StateMachines.Trinity
 
             // Set initialized currentState
             if(initializedCurrentState != null) NewState(initializedCurrentState);
+
+            Initialized = true;
         }
 
         public StateMachine()
         {
 
         }
-
+        
         public void Start()
         {
             if(values.initializeOnStart) Initialize(components.stateMachineUser);
@@ -123,6 +130,17 @@ namespace SLIDDES.StateMachines.Trinity
             }
 
             if(currentState != null) values.currentStateName = currentState.ToString();
+        }
+
+        /// <summary>
+        /// Exits the currentState and doesnt enter a new state
+        /// </summary>
+        public void ExitState()
+        {
+            if(currentState == null) return;
+            currentState.OnExit();
+            currentState = null;
+            nextState = null;
         }
 
         /// <summary>
@@ -196,7 +214,7 @@ namespace SLIDDES.StateMachines.Trinity
         [System.Serializable]
         public class Values
         {
-            [Tooltip("The state that will be set as currentState on initialize")]
+            [Tooltip("The state that will be set as currentState on initialize.")]
             public int stateStartIndex;
             [Tooltip("List containing each state script data for this stateMachine")]
             public List<StateData> stateDatas;

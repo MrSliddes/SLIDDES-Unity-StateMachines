@@ -170,7 +170,8 @@ MonoBehaviour:
   values:
     stateStartIndex: 0
     stateDatas:
-    - stateName: Project.StateMachineTesting.TestingState
+    - stateName: 
+      stateScriptFullName: Project.StateMachineTesting.TestingState
       onEnter:
         m_PersistentCalls:
           m_Calls: []
